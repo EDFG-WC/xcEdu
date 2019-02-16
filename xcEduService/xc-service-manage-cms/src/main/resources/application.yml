@@ -1,0 +1,9 @@
+server:
+  port: 31001
+
+spring:
+  application: xs-service-manage-cms
+  data:
+    mongodb:
+      uri: mongodb://root:123@localhost:27017/xc_cms?authSource=admin&authMechanism=SCRAM-SHA-1
+      authentication-database: admin

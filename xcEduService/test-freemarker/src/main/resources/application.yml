@@ -1,0 +1,13 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    #指定服务名
+    name: test-freemarker
+  freemarker:
+    #关闭模板缓存
+    cache: false
+    settings:
+      #模板更新延迟时间, 0s
+      template_update_delay: 0
