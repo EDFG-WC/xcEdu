@@ -45,7 +45,7 @@ public class CmsPageRepositoryTest {
 	public void testSaveInfo() {
 		CmsPage cmsPage = new CmsPage();
 		cmsPage.setSiteId("laowang9527");
-		cmsPage.setTemplateId("laowang01");
+		cmsPage.setTemplateId("laowang999");
 		cmsPage.setPageName("老王的测试页面");
 		cmsPage.setPageCreateTime(new Date());
 		ArrayList<CmsPageParam> pageParamArrayList = new ArrayList<CmsPageParam>();

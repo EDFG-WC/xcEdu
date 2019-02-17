@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js测试程序</title>
+    <script src="/js/vue/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    {{name}}
+</div>
+</body>
+<script>
+    // 实例化Vue对象
+    //vm :叫做MVVM中的 View Model
+    var VM = new Vue({
+        el: '#app',
+        data: {
+            name: '我是你爹'
+        }
+    });
+</script>
+</html>
