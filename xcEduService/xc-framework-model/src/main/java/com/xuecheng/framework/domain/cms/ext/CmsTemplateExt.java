@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 public class CmsTemplateExt extends CmsTemplate {
 
-	//模版内容
-	private String templateValue;
+  //模版内容
+  private String templateValue;
 
 }

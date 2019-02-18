@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 public class MediaFileProcess_m3u8 extends MediaFileProcess {
 
-	//ts列表
-	private List<String> tslist;
+  //ts列表
+  private List<String> tslist;
 
 }

@@ -19,11 +19,11 @@ import org.hibernate.annotations.GenericGenerator;
 @GenericGenerator(name = "jpa-assigned", strategy = "assigned")
 public class CoursePic implements Serializable {
 
-	private static final long serialVersionUID = -916357110051689486L;
+  private static final long serialVersionUID = -916357110051689486L;
 
-	@Id
-	@GeneratedValue(generator = "jpa-assigned")
-	private String courseid;
-	private String pic;
+  @Id
+  @GeneratedValue(generator = "jpa-assigned")
+  private String courseid;
+  private String pic;
 
 }

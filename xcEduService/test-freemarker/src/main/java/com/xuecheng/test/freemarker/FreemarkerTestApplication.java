@@ -15,12 +15,12 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class FreemarkerTestApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FreemarkerTestApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(FreemarkerTestApplication.class, args);
+  }
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
-	}
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
+  }
 }

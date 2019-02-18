@@ -9,15 +9,15 @@ import com.xuecheng.framework.model.response.ResultCode;
  */
 public class CustomException extends RuntimeException {
 
-	private ResultCode resultCode;
+  private ResultCode resultCode;
 
-	//自定义异常的构造方法
-	public CustomException(ResultCode resultCode) {
-		super("错误代码: " + resultCode.code() + "错误信息" + resultCode.message());
-		this.resultCode = resultCode;
-	}
+  //自定义异常的构造方法
+  public CustomException(ResultCode resultCode) {
+    super("错误代码: " + resultCode.code() + "错误信息" + resultCode.message());
+    this.resultCode = resultCode;
+  }
 
-	public ResultCode getResultCode() {
-		return this.resultCode;
-	}
+  public ResultCode getResultCode() {
+    return this.resultCode;
+  }
 }

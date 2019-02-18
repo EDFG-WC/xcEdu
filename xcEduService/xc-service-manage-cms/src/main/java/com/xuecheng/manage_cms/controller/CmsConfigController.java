@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cms/config")
 public class CmsConfigController implements CmsConfigControllerApi {
 
-	@Autowired
-	private CmsConfigService cmsConfigService;
+  @Autowired
+  private CmsConfigService cmsConfigService;
 
-	@Override
-	@GetMapping("/getmodel/{id}")
-	public CmsConfig getModel(@PathVariable("id") String id) {
-		return cmsConfigService.getConfigById(id);
-	}
+  @Override
+  @GetMapping("/getmodel/{id}")
+  public CmsConfig getModel(@PathVariable("id") String id) {
+    return cmsConfigService.getConfigById(id);
+  }
 }

@@ -12,6 +12,6 @@ import lombok.ToString;
 @ToString
 public class CategoryNode extends Category {
 
-	List<CategoryNode> children;
+  List<CategoryNode> children;
 
 }

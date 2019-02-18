@@ -14,23 +14,23 @@ import lombok.ToString;
 @ToString
 public class QueryPageRequest {
 
-	//站点ID
-	@ApiModelProperty("站点id")
-	private String siteId;
-	//页面ID
-	@ApiModelProperty("页面ID")
-	private String pageId;
-	//页面名称
-	@ApiModelProperty("页面名称")
-	private String pageName;
-	//别名
-	@ApiModelProperty("页面别名")
-	private String pageAlias;
-	//模板ID
-	@ApiModelProperty("模版id")
-	private String templateId;
+  //站点ID
+  @ApiModelProperty("站点id")
+  private String siteId;
+  //页面ID
+  @ApiModelProperty("页面ID")
+  private String pageId;
+  //页面名称
+  @ApiModelProperty("页面名称")
+  private String pageName;
+  //别名
+  @ApiModelProperty("页面别名")
+  private String pageAlias;
+  //模板ID
+  @ApiModelProperty("模版id")
+  private String templateId;
 
-	//页面类型
-	@ApiModelProperty("页面类型")
-	private String pageType;
+  //页面类型
+  @ApiModelProperty("页面类型")
+  private String pageType;
 }

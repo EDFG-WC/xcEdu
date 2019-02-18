@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CmsConfigService {
 
-	@Autowired
-	private CmsConfigRepository cmsConfigRepository;
+  @Autowired
+  private CmsConfigRepository cmsConfigRepository;
 
-	public CmsConfig getConfigById(String id) {
-		CmsConfig cmsConfig = Optional.of(cmsConfigRepository.findById(id)).orElse(null).get();
-		return cmsConfig;
-	}
+  public CmsConfig getConfigById(String id) {
+    CmsConfig cmsConfig = Optional.of(cmsConfigRepository.findById(id)).orElse(null).get();
+    return cmsConfig;
+  }
 }

@@ -11,6 +11,6 @@ import lombok.ToString;
 @ToString
 public class CreateOrderRequest extends RequestData {
 
-	String courseId;
+  String courseId;
 
 }

@@ -13,13 +13,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "report_company")
 public class ReportCompany {
 
-	@Id
-	private String id;
-	private Float evaluation_score;//评价分数（平均分）
-	private Float good_scale;//好评率
-	private Long course_num;//课程数
-	private Long student_num;//学生人数
-	private Long play_num;//播放次数
+  @Id
+  private String id;
+  private Float evaluation_score;//评价分数（平均分）
+  private Float good_scale;//好评率
+  private Long course_num;//课程数
+  private Long student_num;//学生人数
+  private Long play_num;//播放次数
 
 
 }

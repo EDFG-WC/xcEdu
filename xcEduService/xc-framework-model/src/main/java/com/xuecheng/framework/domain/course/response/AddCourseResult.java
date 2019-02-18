@@ -12,11 +12,11 @@ import lombok.ToString;
 @ToString
 public class AddCourseResult extends ResponseResult {
 
-	private String courseid;
+  private String courseid;
 
-	public AddCourseResult(ResultCode resultCode, String courseid) {
-		super(resultCode);
-		this.courseid = courseid;
-	}
+  public AddCourseResult(ResultCode resultCode, String courseid) {
+    super(resultCode);
+    this.courseid = courseid;
+  }
 
 }

@@ -1,15 +1,9 @@
 package com.xuecheng.manage_cms.config;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoCredential;
-import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.gridfs.GridFSBucket;
 import com.mongodb.client.gridfs.GridFSBuckets;
-import java.util.Arrays;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoDbFactory;
@@ -35,12 +29,12 @@ public class MongoConfig {
 		return bucket;
 	}*/
 
-	@Autowired
-	private MongoDbFactory mongoDbFactory;
+  @Autowired
+  private MongoDbFactory mongoDbFactory;
 
-	@Bean
-	public GridFSBucket getGridFSBuckets() {
-		MongoDatabase db = mongoDbFactory.getDb();
-		return GridFSBuckets.create(db);
-	}
+  @Bean
+  public GridFSBucket getGridFSBuckets() {
+    MongoDatabase db = mongoDbFactory.getDb();
+    return GridFSBuckets.create(db);
+  }
 }

@@ -12,6 +12,6 @@ import lombok.ToString;
 @ToString
 public class TeachplanNode extends Teachplan {
 
-	List<TeachplanNode> children;
+  List<TeachplanNode> children;
 
 }

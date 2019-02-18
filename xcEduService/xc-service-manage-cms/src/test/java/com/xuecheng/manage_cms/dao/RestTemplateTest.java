@@ -13,15 +13,15 @@ import org.springframework.web.client.RestTemplate;
 @RunWith(SpringRunner.class)
 public class RestTemplateTest {
 
-	@Autowired
-	private RestTemplate restTemplate;
+  @Autowired
+  private RestTemplate restTemplate;
 
-	@Test
-	public void restTemplateTest() {
-		ResponseEntity<Map> forEntity = restTemplate
-			.getForEntity("http://localhost:31001/cms/config/getmodel/5a791725dd573c3574ee333f",
-				Map.class);
-		Map body = forEntity.getBody();
-		System.out.println(body);
-	}
+  @Test
+  public void restTemplateTest() {
+    ResponseEntity<Map> forEntity = restTemplate
+        .getForEntity("http://localhost:31001/cms/config/getmodel/5a791725dd573c3574ee333f",
+            Map.class);
+    Map body = forEntity.getBody();
+    System.out.println(body);
+  }
 }

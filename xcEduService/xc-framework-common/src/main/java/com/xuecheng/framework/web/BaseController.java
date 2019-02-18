@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
  */
 public class BaseController {
 
-	protected HttpServletRequest request;
+  protected HttpServletRequest request;
 
-	protected HttpServletResponse response;
+  protected HttpServletResponse response;
 
-	protected HttpSession session;
+  protected HttpSession session;
 
-	@ModelAttribute
-	public void setReqAndRes(HttpServletRequest request, HttpServletResponse response) {
+  @ModelAttribute
+  public void setReqAndRes(HttpServletRequest request, HttpServletResponse response) {
 
-		this.request = request;
+    this.request = request;
 
-		this.response = response;
+    this.response = response;
 
-		this.session = request.getSession();
+    this.session = request.getSession();
 
-	}
+  }
 }

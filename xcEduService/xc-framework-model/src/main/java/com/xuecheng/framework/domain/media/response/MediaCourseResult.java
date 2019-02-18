@@ -16,11 +16,11 @@ import lombok.ToString;
 @NoArgsConstructor
 public class MediaCourseResult extends ResponseResult {
 
-	MediaFile mediaVideo;
-	MediaVideoCourse mediaVideoCourse;
+  MediaFile mediaVideo;
+  MediaVideoCourse mediaVideoCourse;
 
-	public MediaCourseResult(ResultCode resultCode, MediaVideoCourse mediaVideoCourse) {
-		super(resultCode);
-		this.mediaVideoCourse = mediaVideoCourse;
-	}
+  public MediaCourseResult(ResultCode resultCode, MediaVideoCourse mediaVideoCourse) {
+    super(resultCode);
+    this.mediaVideoCourse = mediaVideoCourse;
+  }
 }

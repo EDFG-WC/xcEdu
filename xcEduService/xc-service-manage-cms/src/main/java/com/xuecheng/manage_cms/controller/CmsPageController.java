@@ -27,21 +27,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/cms/page")
 public class CmsPageController implements CmsPageControllerApi {
 
-	@Autowired
-	private PageService pageService;
+  @Autowired
+  private PageService pageService;
 
-	/**
-	 * @Author wangc
-	 * @Description 分页查询的方法
-	 * @Date 18:44 2018/12/9
-	 * @Param
-	 */
-	@Override
-	@GetMapping("/list/{page}/{size}")
-	public QueryResponseResult findList(@PathVariable("page") Integer pageNum,
-		@PathVariable("size") Integer pageSize,
-		QueryPageRequest request) {
-		//静态数据测试: 定义queryResponseResult;
+  /**
+   * @Author wangc
+   * @Description 分页查询的方法
+   * @Date 18:44 2018/12/9
+   * @Param
+   */
+  @Override
+  @GetMapping("/list/{page}/{size}")
+  public QueryResponseResult findList(@PathVariable("page") Integer pageNum,
+      @PathVariable("size") Integer pageSize,
+      QueryPageRequest request) {
+    //静态数据测试: 定义queryResponseResult;
 	/*	QueryResult<CmsPage> queryResult = new QueryResult<CmsPage>();
 		List<CmsPage> list = new ArrayList<CmsPage>();
 		CmsPage cmsPage = new CmsPage();
@@ -51,38 +51,38 @@ public class CmsPageController implements CmsPageControllerApi {
 		queryResult.setTotal(1);
 		QueryResponseResult queryResponseResult = new QueryResponseResult(CommonCode.SUCCESS, queryResult);
 		return queryResponseResult;*/
-		//调用service
-		return pageService.findList(pageNum, pageSize, request);
-	}
+    //调用service
+    return pageService.findList(pageNum, pageSize, request);
+  }
 
-	@Override
-	@GetMapping("/siteList")
-	public QueryResponseResult findSiteList() {
-		return pageService.findSiteList();
+  @Override
+  @GetMapping("/siteList")
+  public QueryResponseResult findSiteList() {
+    return pageService.findSiteList();
 
-	}
+  }
 
-	@Override
-	@PostMapping("/add")
-	public CmsPageResult add(@RequestBody CmsPage cmsPage) {
-		return pageService.add(cmsPage);
-	}
+  @Override
+  @PostMapping("/add")
+  public CmsPageResult add(@RequestBody CmsPage cmsPage) {
+    return pageService.add(cmsPage);
+  }
 
-	@Override
-	@GetMapping("/get/{id}")
-	public CmsPage findById(@PathVariable("id") String id) {
-		return pageService.findById(id);
-	}
+  @Override
+  @GetMapping("/get/{id}")
+  public CmsPage findById(@PathVariable("id") String id) {
+    return pageService.findById(id);
+  }
 
-	@Override
-	@PutMapping("/edit/{id}")
-	public CmsPageResult edit(@PathVariable("id") String id, @RequestBody CmsPage cmsPage) {
-		return pageService.update(id, cmsPage);
-	}
+  @Override
+  @PutMapping("/edit/{id}")
+  public CmsPageResult edit(@PathVariable("id") String id, @RequestBody CmsPage cmsPage) {
+    return pageService.update(id, cmsPage);
+  }
 
-	@Override
-	@DeleteMapping("/delete/{id}")
-	public ResponseResult delete(@PathVariable("id") String id) {
-		return pageService.delete(id);
-	}
+  @Override
+  @DeleteMapping("/delete/{id}")
+  public ResponseResult delete(@PathVariable("id") String id) {
+    return pageService.delete(id);
+  }
 }

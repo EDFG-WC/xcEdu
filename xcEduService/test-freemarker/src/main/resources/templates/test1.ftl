@@ -18,11 +18,12 @@ Hello ${name}!
   </tr>
   <#list stus as stu>
     <tr style="border: solid yellow">
-    <td>${stu_index + 1}</td>
-    <td <#if stu.name == '小明'>style="background: #8b1c5b;" </#if>${stu.name}</td>
-    <td>${stu.age}</td>
-    <td>${stu.money}</td>
-    <td>${stu.birthday?date}</td>
+      <td>${stu_index + 1}</td>
+      <td <#if stu.name == '小明'>style="background: #8b1c5b;"
+      </#if>${stu.name}</td>
+      <td>${stu.age}</td>
+      <td>${stu.money}</td>
+      <td>${stu.birthday?date}</td>
     </tr>
   </#list>
 </table>
@@ -36,10 +37,14 @@ ${stuMap.stu2.age}<br/>
 遍历key来取值<br/>
 <#list stuMap?keys as k>
   <tr>
-  <td>${k_index+1}</td><br/>
-  <td <#if stuMap[k].name == '小红'>style="background: aquamarine" </#if>>${stuMap[k].name}</td><br/>
-  <td>${stuMap[k].age}</td><br/>
-  <td>${stuMap[k].money}</td><br/>
+    <td>${k_index+1}</td>
+    <br/>
+    <td <#if stuMap[k].name == '小红'>style="background: aquamarine" </#if>>${stuMap[k].name}</td>
+    <br/>
+    <td>${stuMap[k].age}</td>
+    <br/>
+    <td>${stuMap[k].money}</td>
+    <br/>
   </tr>
 </#list>
 </body>

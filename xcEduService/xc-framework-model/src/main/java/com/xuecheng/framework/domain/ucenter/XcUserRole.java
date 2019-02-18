@@ -20,17 +20,17 @@ import org.hibernate.annotations.GenericGenerator;
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class XcUserRole {
 
-	@Id
-	@GeneratedValue(generator = "jpa-uuid")
-	@Column(length = 32)
-	private String id;
+  @Id
+  @GeneratedValue(generator = "jpa-uuid")
+  @Column(length = 32)
+  private String id;
 
-	@Column(name = "user_id")
-	private String userId;
-	@Column(name = "role_id")
-	private String roleId;
-	private String creator;
-	@Column(name = "create_time")
-	private Date createTime;
+  @Column(name = "user_id")
+  private String userId;
+  @Column(name = "role_id")
+  private String roleId;
+  private String creator;
+  @Column(name = "create_time")
+  private Date createTime;
 
 }

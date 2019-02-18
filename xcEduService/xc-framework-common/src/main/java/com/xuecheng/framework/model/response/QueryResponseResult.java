@@ -7,11 +7,11 @@ import lombok.ToString;
 @ToString
 public class QueryResponseResult extends ResponseResult {
 
-	QueryResult queryResult;
+  QueryResult queryResult;
 
-	public QueryResponseResult(ResultCode resultCode, QueryResult queryResult) {
-		super(resultCode);
-		this.queryResult = queryResult;
-	}
+  public QueryResponseResult(ResultCode resultCode, QueryResult queryResult) {
+    super(resultCode);
+    this.queryResult = queryResult;
+  }
 
 }

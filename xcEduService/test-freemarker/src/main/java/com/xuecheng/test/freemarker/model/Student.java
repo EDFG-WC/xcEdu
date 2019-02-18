@@ -16,15 +16,15 @@ import lombok.ToString;
 @ToString
 public class Student {
 
-	private String name;
+  private String name;
 
-	private int age;
+  private int age;
 
-	private Date birthday;
+  private Date birthday;
 
-	private Float money;
+  private Float money;
 
-	private List<Student> friends;
+  private List<Student> friends;
 
-	private Student bestFriend;
+  private Student bestFriend;
 }

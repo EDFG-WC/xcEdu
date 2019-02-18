@@ -14,10 +14,10 @@ import lombok.ToString;
 @NoArgsConstructor
 public class CoursePreviewResult extends ResponseResult {
 
-	String url;
+  String url;
 
-	public CoursePreviewResult(ResultCode resultCode, String url) {
-		super(resultCode);
-		this.url = url;
-	}
+  public CoursePreviewResult(ResultCode resultCode, String url) {
+    super(resultCode);
+    this.url = url;
+  }
 }

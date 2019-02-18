@@ -12,9 +12,9 @@ import lombok.ToString;
 @ToString
 public class CategoryParameter extends Category {
 
-	//二级分类ids
-	List<String> bIds;
-	//三级分类ids
-	List<String> cIds;
+  //二级分类ids
+  List<String> bIds;
+  //三级分类ids
+  List<String> cIds;
 
 }

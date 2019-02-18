@@ -20,16 +20,16 @@ import org.hibernate.annotations.GenericGenerator;
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class XcPermission {
 
-	@Id
-	@GeneratedValue(generator = "jpa-uuid")
-	@Column(length = 32)
-	private String id;
-	@Column(name = "roleId")
-	private String role_id;
-	@Column(name = "menuId")
-	private String menu_id;
-	@Column(name = "createTime")
-	private Date create_time;
+  @Id
+  @GeneratedValue(generator = "jpa-uuid")
+  @Column(length = 32)
+  private String id;
+  @Column(name = "roleId")
+  private String role_id;
+  @Column(name = "menuId")
+  private String menu_id;
+  @Column(name = "createTime")
+  private Date create_time;
 
 
 }

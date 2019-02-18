@@ -12,12 +12,12 @@ import lombok.ToString;
 @ToString
 public class PayQrcodeResult extends ResponseResult {
 
-	private String codeUrl;
-	private Float money;
-	private String orderNumber;
+  private String codeUrl;
+  private Float money;
+  private String orderNumber;
 
-	public PayQrcodeResult(ResultCode resultCode) {
-		super(resultCode);
-	}
+  public PayQrcodeResult(ResultCode resultCode) {
+    super(resultCode);
+  }
 
 }

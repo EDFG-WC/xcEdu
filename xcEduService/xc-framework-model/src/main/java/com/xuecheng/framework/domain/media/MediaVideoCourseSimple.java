@@ -11,9 +11,9 @@ import lombok.ToString;
 @ToString
 public class MediaVideoCourseSimple {
 
-	//课程id
-	private String courseid;
-	//章节id
-	private String chapter;
+  //课程id
+  private String courseid;
+  //章节id
+  private String chapter;
 
 }

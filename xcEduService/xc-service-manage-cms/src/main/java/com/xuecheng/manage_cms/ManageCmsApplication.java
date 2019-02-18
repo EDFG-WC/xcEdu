@@ -25,18 +25,18 @@ import org.springframework.web.client.RestTemplate;
 @ComponentScan(basePackages = {"com.xuecheng.framework"})
 public class ManageCmsApplication {
 
-	/**
-	 * @Author wangc
-	 * @Description 自己写的启动类
-	 * @Date 20:42 2018/12/9
-	 * @Param
-	 **/
-	public static void main(String[] args) {
-		SpringApplication.run(ManageCmsApplication.class, args);
-	}
+  /**
+   * @Author wangc
+   * @Description 自己写的启动类
+   * @Date 20:42 2018/12/9
+   * @Param
+   **/
+  public static void main(String[] args) {
+    SpringApplication.run(ManageCmsApplication.class, args);
+  }
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
-	}
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
+  }
 }
