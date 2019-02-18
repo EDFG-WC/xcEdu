@@ -170,15 +170,15 @@ public class PageService {
 
   //根据页面id查询页面
   public CmsPage findById(String id) {
-		/*Optional<CmsPage> cmsOp = cmsPageRepository.findById(id);
-		if (cmsOp.isPresent()) {
-			return cmsOp.get();
-		}
-		return null;*/
+    Optional<CmsPage> cmsOp = cmsPageRepository.findById(id);
+    if (cmsOp.isPresent()) {
+      return cmsOp.get();
+    }
+    return null;
     //Optional<CmsPage> cmsOp = cmsPageRepository.findById(id);
 		/*Optional<CmsPage> cmsPage = Optional.of(cmsPageRepository.findById(id)).orElse(null);
 		return cmsPage.get();*/
-    return Optional.of(cmsPageRepository.findById(id)).orElse(null).get();
+    //return Optional.of(cmsPageRepository.findById(id)).orElse(null).get();
   }
 
   //修改页面
@@ -268,7 +268,8 @@ public class PageService {
     Optional<CmsTemplate> cmsTemplateOpt = cmsTemplateRepository.findById(templateId);
     if (cmsTemplateOpt.isPresent()) {
       //获取模板文件id
-      String fileId = opt.getTemplateFileId();
+      CmsTemplate cmsTemplate = cmsTemplateOpt.get();
+      String fileId = cmsTemplate.getTemplateFileId();
       //根据id查询文件
       GridFSFile gridFSFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(fileId)));
       //打开下载流对象
@@ -304,6 +305,7 @@ public class PageService {
     } catch (Exception e) {
       LOG.error(e.getMessage());
     }
+    return null;
   }
 
   /**
@@ -328,8 +330,7 @@ public class PageService {
     }
     //3. 执行页面静态化
     String html = generateHtml(templateContent, model);
-    if (StringUtils.isEmpty(html))
-    {
+    if (StringUtils.isEmpty(html)) {
       //静态化页面为空
       CastException.cast(CmsCode.CMS_GENERATEHTML_HTMLISNULL);
     }

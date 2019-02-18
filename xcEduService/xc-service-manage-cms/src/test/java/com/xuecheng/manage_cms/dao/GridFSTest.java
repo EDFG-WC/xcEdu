@@ -37,7 +37,7 @@ public class GridFSTest {
   @Test
   public void testGridFs() throws FileNotFoundException {
     //指定存储的文件
-    File file = new File("e:/index_banner.ftl");
+    File file = new File("C:/Users/eniac/Documents/index_banner.ftl");
     //定义输入流
     FileInputStream fis = new FileInputStream(file);
     //向GridFs存储文件
@@ -55,7 +55,7 @@ public class GridFSTest {
     String id4 = "index.html";
     String id5 = "5c45b65b183fef079c5b5c51";
     //根据id查询文件
-    GridFSFile gridFSFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(id5)));
+    GridFSFile gridFSFile = gridFsTemplate.findOne(Query.query(Criteria.where("_id").is(id2)));
     //打开下载流对象
     ObjectId objectId = gridFSFile.getObjectId();
     GridFSDownloadStream gridFSDownloadStream = gridFSBucket.openDownloadStream(objectId);
