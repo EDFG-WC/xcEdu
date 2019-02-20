@@ -41,7 +41,7 @@ public class GridFSTest {
     //定义输入流
     FileInputStream fis = new FileInputStream(file);
     //向GridFs存储文件
-    ObjectId objectId = gridFsTemplate.store(fis, "轮播图测试文件002");
+    ObjectId objectId = gridFsTemplate.store(fis, "轮播图测试文件999");
     //得到文件Id
     String fileId = objectId.toString();
     System.out.println(fileId);

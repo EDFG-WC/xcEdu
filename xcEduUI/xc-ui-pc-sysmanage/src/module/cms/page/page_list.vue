@@ -93,6 +93,11 @@
             type="text"
             @click="delCms(pageCao.row.pageId)">删除
           </el-button>
+          <el-button
+            size="small"
+            type="text"
+            @click="previewCms(pageCao.row.pageId)">预览
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -173,6 +178,9 @@
             }
           });
         });
+      },
+      previewCms: function (pageId) {
+        window.open("http://www.xuecheng.com/cms/preview/"+pageId)
       }
     },
     //钩子方法

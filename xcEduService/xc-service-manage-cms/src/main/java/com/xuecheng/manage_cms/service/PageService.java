@@ -134,6 +134,12 @@ public class PageService {
     return new QueryResponseResult(CommonCode.SUCCESS, queryResult);
   }
 
+  /**
+   * @Author eniac
+   * @Description //TODO
+   * @Date 13:15 2019/2/19
+   * @Param
+   **/
   public QueryResponseResult findSiteList() {
     List<CmsPage> all = cmsPageRepository.findAll();
     List<Map<String, String>> mapList = new ArrayList<>();
@@ -247,10 +253,6 @@ public class PageService {
     return body;
   }
 
-  //1.静态化程序获取页面的url
-  //2.静态化程序远程请求DataUrl获取数据模型
-  //3.静态化程序获取页面的模板信息
-  //4.执行页面静态化
 
   //2. 获取页面模板
   private String getTemplateByPageId(String pageId) {

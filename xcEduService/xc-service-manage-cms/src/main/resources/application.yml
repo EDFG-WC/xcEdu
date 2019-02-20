@@ -7,3 +7,8 @@ spring:
     mongodb:
       uri: mongodb://root:123@localhost:27017/xc_cms?authSource=admin&authMechanism=SCRAM-SHA-1
       authentication-database: admin
+  freemarker:
+    #关闭缓存, 便于测试
+    cache: false
+    settings:
+      template_update_delay: 0
