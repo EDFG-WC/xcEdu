@@ -15,17 +15,17 @@ import java.io.IOException;
  * @Author 王晨
  * @Date
  **/
-public class Consumer2_Routing_Email {
+public class Consumer3_Topics_Email {
 
   //定义队列和交换机
   private static final String QUEUE_INFORM_EMAIL = "queue_inform_email";
-  private static final String EXCHANGE_ROUTING_INFORM = "exchange_routing_inform";
   private static final String ROUTINGKEY_EMAIL = "inform_email";
+  private static final String EXCHANGE_TOPICS_INFORM = "exchange_topics_inform";
 
   public static void main(String[] args) {
     //1. 通过建立工厂和mq建立连接
     ConnectionFactory connectionFactory = new ConnectionFactory();
-    connectionFactory.setHost("192.168.1.21");
+    connectionFactory.setHost("192.168.0.101");
     //和消费者通信的端口是5672, 15672是管理端口
     connectionFactory.setPort(5672);
     connectionFactory.setUsername("admin");
@@ -45,7 +45,7 @@ public class Consumer2_Routing_Email {
        * 交换机名称
        * 交换机类型: FANOUT对: 对应发布/订阅; DIRECT: 对应routing模式; TOPIC: 对topic模式; HEADER: 对应header模式
        */
-      channel.exchangeDeclare(EXCHANGE_ROUTING_INFORM, BuiltinExchangeType.DIRECT);
+      channel.exchangeDeclare(EXCHANGE_TOPICS_INFORM, BuiltinExchangeType.TOPIC);
       //声明队列
       /**
        * queue: 队列名称
@@ -62,7 +62,7 @@ public class Consumer2_Routing_Email {
        * 交换机名称
        * routingKey: 在发布/订阅模式设置为"", 它的作用是根据routingKey的值发布到指定的队列去, 本模式不用
        */
-      channel.queueBind(QUEUE_INFORM_EMAIL, EXCHANGE_ROUTING_INFORM, ROUTINGKEY_EMAIL);
+      channel.queueBind(QUEUE_INFORM_EMAIL, EXCHANGE_TOPICS_INFORM, ROUTINGKEY_EMAIL);
       //监听队列
       /**
        * queue: 队列名称

@@ -11,19 +11,19 @@ import com.rabbitmq.client.ConnectionFactory;
  * @Author 王晨
  * @Date
  **/
-public class Producer2_Routing {
+public class Producer3_Topics {
 
   //定义队列和交换机
   private static final String QUEUE_INFORM_EMAIL = "queue_inform_email";
   private static final String QUEUE_INFORM_SMS = "queue_inform_sms";
-  private static final String EXCHANGE_ROUTING_INFORM = "exchange_routing_inform";
-  private static final String ROUTINGKEY_EMAIL = "inform_email";
-  private static final String ROUTINGKEY_SMS= "inform_sms";
+  private static final String EXCHANGE_TOPICS_INFORM = "exchange_topics_inform";
+  private static final String ROUTINGKEY_EMAIL = "inform.#.email.#";
+  private static final String ROUTINGKEY_SMS= "inform.#.sms.#";
 
   public static void main(String[] args) {
     //1. 通过建立工厂和mq建立连接
     ConnectionFactory connectionFactory = new ConnectionFactory();
-    connectionFactory.setHost("192.168.1.21");
+    connectionFactory.setHost("192.168.0.101");
     //和消费者通信的端口是5672, 15672是管理端口
     connectionFactory.setPort(5672);
     connectionFactory.setUsername("admin");
@@ -53,7 +53,7 @@ public class Producer2_Routing {
        * 交换机名称
        * 交换机类型: FANOUT对: 对应发布/订阅; DIRECT: 对应routing模式; TOPIC: 对topic模式; HEADER: 对应header模式
        */
-      channel.exchangeDeclare(EXCHANGE_ROUTING_INFORM, BuiltinExchangeType.DIRECT);
+      channel.exchangeDeclare(EXCHANGE_TOPICS_INFORM, BuiltinExchangeType.TOPIC);
       //绑定队列和交换机
       /**
        * 参数说明:
@@ -61,8 +61,8 @@ public class Producer2_Routing {
        * 交换机名称
        * routingKey: 在发布/订阅模式设置为"", 它的作用是根据routingKey的值发布到指定的队列去, 本模式不用
        */
-      channel.queueBind(QUEUE_INFORM_EMAIL, EXCHANGE_ROUTING_INFORM, ROUTINGKEY_EMAIL);
-      channel.queueBind(QUEUE_INFORM_SMS, EXCHANGE_ROUTING_INFORM, ROUTINGKEY_SMS);
+      channel.queueBind(QUEUE_INFORM_EMAIL, EXCHANGE_TOPICS_INFORM, ROUTINGKEY_EMAIL);
+      channel.queueBind(QUEUE_INFORM_SMS, EXCHANGE_TOPICS_INFORM, ROUTINGKEY_SMS);
       //发送消息
       //指定队列, 指定交换机
       /**
@@ -72,11 +72,23 @@ public class Producer2_Routing {
        * body: 消息体(最重要的部分)
        */
       for (int i = 0; i < 5; i++) {
-        String message = "恭喜你注册成功!" + i;
+        String message = "email!" + i;
         //发送消息的时候指定routingKey
-        channel.basicPublish(EXCHANGE_ROUTING_INFORM, ROUTINGKEY_EMAIL, null, message.getBytes());
+        channel.basicPublish(EXCHANGE_TOPICS_INFORM, "inform.email", null, message.getBytes());
         System.out.println("send to mq: " + message);
       }
+      /*for (int i = 0; i < 5; i++) {
+        String message = "sms!" + i;
+        //发送消息的时候指定routingKey
+        channel.basicPublish(EXCHANGE_TOPICS_INFORM, "inform_sms", null, message.getBytes());
+        System.out.println("send to mq: " + message);
+      }
+      for (int i = 0; i < 5; i++) {
+        String message = "email & sms!" + i;
+        //发送消息的时候指定routingKey
+        channel.basicPublish(EXCHANGE_TOPICS_INFORM, "inform.email.sms", null, message.getBytes());
+        System.out.println("send to mq: " + message);
+      }*/
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
