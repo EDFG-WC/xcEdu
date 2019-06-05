@@ -1,0 +1,26 @@
+server:
+  port: 31000
+
+spring:
+  application: xs-service-manage-cms-client
+  data:
+    mongodb:
+      uri: mongodb://root:123@localhost:27017/xc_cms?authSource=admin&authMechanism=SCRAM-SHA-1
+      authentication-database: admin
+  freemarker:
+    #关闭缓存, 便于测试
+    cache: false
+    settings:
+      template_update_delay: 0
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+  xuecheng:
+    mq:
+      #cms客户端监控的队列名称(不同的客户端监控的队列不能重复)
+      queue: queue_cms_postpage_01
+      #这个routingKey为门户站点ID
+      routingKey: 5a751fab6abb5044e0d19ea1

@@ -13,6 +13,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     //proxyTable: proxyConfig.proxyList,
+    //代理(改变前端访问的地址, 让前端的url指向后端的url)
     proxyTable: {
       '/banner': {
         // target: 'http://localhost:3000/mock/11'
@@ -106,6 +107,7 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
+    //创建映射, 便于本地开发的热更新功能()
     devtool: 'eval-source-map',
 
     // If you have problems debugging vue-files in devtools,
