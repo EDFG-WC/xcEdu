@@ -1,0 +1,15 @@
+server:
+  port: 9999
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123
+    #spring batch 初始脚本
+    schema: classpath:/org/springframework/batch/core/schema-mysql.sql
+  batch:
+    initialize-schema: always
+    
