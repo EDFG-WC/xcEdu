@@ -1,11 +1,14 @@
 package com.batch.testspringbatch.output.flatFile;
 
 import org.springframework.batch.item.database.JdbcPagingItemReader;
+import org.springframework.batch.item.database.Order;
+import org.springframework.batch.item.database.support.MySqlPagingQueryProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 
 
 @Configuration
@@ -29,6 +32,14 @@ public class FlatFileDemoJobReaderConfiguration {
                     .gender(rs.getString("gender"))
                     .build();
         });
-        return null;
+
+        MySqlPagingQueryProvider queryProvider = new MySqlPagingQueryProvider();
+        queryProvider.setSelectClause("emp_no, birth_date, first_name, last_name, hire_date, gender");
+        queryProvider.setFromClause("from employees");
+        HashMap<String, Order> sortKeys = new HashMap<>(1);
+        sortKeys.put("emp_no", Order.ASCENDING);
+        queryProvider.setSortKeys(sortKeys);
+        reader.setQueryProvider(queryProvider);
+        return reader;
     }
 }
